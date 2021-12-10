@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
+    let arrUserFavorite = JSON.parse(localStorage.getItem('favorites'));
+    console.log(arrUserFavorite);
+    for (const favoriteUser of arrUserFavorite) {
+        let userContainer = document.createElement('div');
+        let userName = document.createElement('div');
+        userName.innerText = `${favoriteUser.name}`;
+        let userAge = document.createElement('div');
+        userAge.innerText = `${favoriteUser.age}`;
+        let userStatys = document.createElement('div');
+        userStatys.innerText = `${favoriteUser.status}`
+        document.body.appendChild(userContainer);
+        userContainer.appendChild(userName);
+        userContainer.appendChild(userAge);
+        userContainer.appendChild(userStatys);
+    }
+</script>
+</body>
+</html>
